@@ -74,7 +74,7 @@ export async function fetchRssFeed(feedUrl: string): Promise<RawDeal[]> {
 /**
  * Strip all HTML tags from a string.
  */
-function stripHtml(html: string): string {
+export function stripHtml(html: string): string {
   if (!html) return "";
   return html.replace(/<[^>]*>/g, "").trim();
 }
@@ -82,7 +82,7 @@ function stripHtml(html: string): string {
 /**
  * Extract the first image URL (src attribute) from HTML content.
  */
-function extractImageUrl(content: string): string | undefined {
+export function extractImageUrl(content: string): string | undefined {
   if (!content) return undefined;
   const match = content.match(/<img[^>]+src=["']([^"']+)["']/i);
   return match?.[1] || undefined;
@@ -96,7 +96,7 @@ function extractImageUrl(content: string): string | undefined {
  *  - "Great deal at StoreName"
  *  - "... at StoreName - extra info"
  */
-function extractStore(title: string, content: string): string | undefined {
+export function extractStore(title: string, content: string): string | undefined {
   if (!title) return undefined;
 
   // Pattern 1: "StoreName: ..."
