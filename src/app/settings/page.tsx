@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import type { Keyword } from "@/lib/types";
+import NotificationSetup from "@/components/NotificationSetup";
 
 export default function SettingsPage() {
   // ── Keywords ──────────────────────────────────────────────
@@ -66,23 +67,6 @@ export default function SettingsPage() {
     } finally {
       setIsFetching(false);
     }
-  };
-
-  // ── Notifications ─────────────────────────────────────────
-  const [notifStatus, setNotifStatus] = useState<"unknown" | "granted" | "denied" | "default">(
-    "unknown",
-  );
-
-  useEffect(() => {
-    if (typeof window !== "undefined" && "Notification" in window) {
-      setNotifStatus(Notification.permission as typeof notifStatus);
-    }
-  }, []);
-
-  const requestNotifPermission = async () => {
-    if (!("Notification" in window)) return;
-    const perm = await Notification.requestPermission();
-    setNotifStatus(perm as typeof notifStatus);
   };
 
   return (
@@ -303,58 +287,10 @@ export default function SettingsPage() {
           >
             Notifications
           </h2>
-
-          <div className="flex items-center gap-3">
-            {/* Status indicator */}
-            <div className="flex items-center gap-2">
-              <div
-                className={`w-2 h-2 rounded-full ${notifStatus === "granted" ? "pulse-dot" : ""}`}
-                style={{
-                  backgroundColor:
-                    notifStatus === "granted"
-                      ? "#2D6A4F"
-                      : notifStatus === "denied"
-                        ? "#D63B2F"
-                        : "#737373",
-                }}
-              />
-              <span className="text-xs" style={{ color: "#a3a3a3" }}>
-                {notifStatus === "granted"
-                  ? "Enabled"
-                  : notifStatus === "denied"
-                    ? "Blocked by browser"
-                    : "Not enabled"}
-              </span>
-            </div>
-
-            {notifStatus !== "granted" && notifStatus !== "denied" && (
-              <button
-                onClick={requestNotifPermission}
-                className="px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200"
-                style={{
-                  backgroundColor: "#1a1a1a",
-                  color: "#a3a3a3",
-                  border: "1px solid #2a2a2a",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = "#2D6A4F";
-                  e.currentTarget.style.color = "#40916C";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = "#2a2a2a";
-                  e.currentTarget.style.color = "#a3a3a3";
-                }}
-              >
-                Enable
-              </button>
-            )}
-          </div>
-
-          {notifStatus === "denied" && (
-            <p className="mt-2 text-[10px]" style={{ color: "#D63B2F" }}>
-              Notifications were blocked. Update your browser settings to enable them.
-            </p>
-          )}
+          <p className="text-xs mb-4" style={{ color: "#737373" }}>
+            Receive push alerts when new deals match your keywords.
+          </p>
+          <NotificationSetup />
         </section>
       </div>
     </div>
