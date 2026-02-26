@@ -27,7 +27,7 @@ export default function FilterBar({
         backgroundColor: "rgba(20, 20, 20, 0.95)",
         backdropFilter: "blur(8px)",
         WebkitBackdropFilter: "blur(8px)",
-        borderBottom: "1px solid #1a1a1a",
+        borderBottom: "1px solid #2a2a2a",
       }}
     >
       {/* Big Box toggle */}
@@ -41,7 +41,7 @@ export default function FilterBar({
         </div>
         <span
           className="text-xs font-medium whitespace-nowrap"
-          style={{ color: showBigBox ? "#40916C" : "#737373" }}
+          style={{ color: showBigBox ? "#3A8A66" : "#5c5c56" }}
         >
           Big Box
         </span>
@@ -60,19 +60,19 @@ export default function FilterBar({
               onClick={() => onCategoryChange(cat.value)}
               className="px-3 py-1 rounded-full text-xs font-medium transition-all duration-200 whitespace-nowrap"
               style={{
-                backgroundColor: isActive ? "#2D6A4F" : "#1a1a1a",
-                color: isActive ? "#f5f5f5" : "#a3a3a3",
-                border: isActive ? "1px solid #40916C" : "1px solid #2a2a2a",
+                backgroundColor: isActive ? "#2D6A4F" : "#141414",
+                color: isActive ? "#ffffff" : "#8a8a82",
+                border: isActive ? "1px solid #3A8A66" : "1px solid #2a2a2a",
               }}
               onMouseEnter={(e) => {
                 if (!isActive) {
-                  e.currentTarget.style.backgroundColor = "#222222";
-                  e.currentTarget.style.borderColor = "#333";
+                  e.currentTarget.style.backgroundColor = "#1e1e1e";
+                  e.currentTarget.style.borderColor = "#2a2a2a";
                 }
               }}
               onMouseLeave={(e) => {
                 if (!isActive) {
-                  e.currentTarget.style.backgroundColor = "#1a1a1a";
+                  e.currentTarget.style.backgroundColor = "#141414";
                   e.currentTarget.style.borderColor = "#2a2a2a";
                 }
               }}

@@ -52,7 +52,7 @@ export default function SearchOverlay({ showBigBox, onClose }: SearchOverlayProp
       {/* Search header */}
       <div
         className="flex items-center gap-3 px-4 h-14 shrink-0"
-        style={{ borderBottom: "1px solid #1f1f1f" }}
+        style={{ borderBottom: "1px solid #2a2a2a" }}
       >
         {/* Search icon */}
         <svg
@@ -64,7 +64,7 @@ export default function SearchOverlay({ showBigBox, onClose }: SearchOverlayProp
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          style={{ color: "#737373", flexShrink: 0 }}
+          style={{ color: "#5c5c56", flexShrink: 0 }}
         >
           <circle cx="11" cy="11" r="8" />
           <path d="m21 21-4.3-4.3" />
@@ -79,7 +79,7 @@ export default function SearchOverlay({ showBigBox, onClose }: SearchOverlayProp
           onChange={(e) => setQuery(e.target.value)}
           className="flex-1 bg-transparent outline-none text-sm"
           style={{
-            color: "#f5f5f5",
+            color: "#f0f0eb",
             fontFamily: "var(--font-body), sans-serif",
           }}
         />
@@ -89,13 +89,13 @@ export default function SearchOverlay({ showBigBox, onClose }: SearchOverlayProp
           onClick={handleClose}
           aria-label="Close search"
           className="p-1.5 rounded-lg transition-colors duration-200"
-          style={{ color: "#737373" }}
+          style={{ color: "#5c5c56" }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.color = "#f5f5f5";
-            e.currentTarget.style.backgroundColor = "#222";
+            e.currentTarget.style.color = "#f0f0eb";
+            e.currentTarget.style.backgroundColor = "#1e1e1e";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.color = "#737373";
+            e.currentTarget.style.color = "#5c5c56";
             e.currentTarget.style.backgroundColor = "transparent";
           }}
         >
@@ -147,13 +147,13 @@ export default function SearchOverlay({ showBigBox, onClose }: SearchOverlayProp
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              style={{ color: "#333" }}
+              style={{ color: "#2a2a2a" }}
             >
               <circle cx="11" cy="11" r="8" />
               <path d="m21 21-4.3-4.3" />
               <line x1="8" y1="11" x2="14" y2="11" />
             </svg>
-            <p className="mt-4 text-sm" style={{ color: "#737373" }}>
+            <p className="mt-4 text-sm" style={{ color: "#5c5c56" }}>
               No deals match &ldquo;{query.trim()}&rdquo;
             </p>
           </div>
@@ -162,7 +162,7 @@ export default function SearchOverlay({ showBigBox, onClose }: SearchOverlayProp
         {/* Empty initial state */}
         {!isSearching && query.trim().length === 0 && (
           <div className="flex flex-col items-center justify-center py-20 text-center">
-            <p className="text-xs" style={{ color: "#555" }}>
+            <p className="text-xs" style={{ color: "#5c5c56" }}>
               Type to search deals, stores, or categories
             </p>
           </div>

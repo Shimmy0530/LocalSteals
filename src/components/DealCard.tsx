@@ -46,18 +46,18 @@ export default function DealCard({ deal, index, showBigBox }: DealCardProps) {
       className="card-stagger block rounded-xl p-4 transition-all duration-250 no-underline group"
       style={{
         animationDelay: `${staggerDelay}ms`,
-        backgroundColor: "#1a1a1a",
-        border: "1px solid #222",
+        backgroundColor: "#141414",
+        border: "1px solid #2a2a2a",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.backgroundColor = "#222222";
+        e.currentTarget.style.backgroundColor = "#1e1e1e";
         e.currentTarget.style.borderColor = "#2D6A4F";
         e.currentTarget.style.boxShadow = "0 0 16px rgba(45, 106, 79, 0.15)";
         e.currentTarget.style.transform = "translateY(-2px)";
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.backgroundColor = "#1a1a1a";
-        e.currentTarget.style.borderColor = "#222";
+        e.currentTarget.style.backgroundColor = "#141414";
+        e.currentTarget.style.borderColor = "#2a2a2a";
         e.currentTarget.style.boxShadow = "none";
         e.currentTarget.style.transform = "translateY(0)";
       }}
@@ -69,8 +69,8 @@ export default function DealCard({ deal, index, showBigBox }: DealCardProps) {
           <span
             className="text-[10px] font-medium px-1.5 py-0.5 rounded"
             style={{
-              backgroundColor: "#141414",
-              color: "#737373",
+              backgroundColor: "#1e1e1e",
+              color: "#5c5c56",
               border: "1px solid #2a2a2a",
             }}
           >
@@ -83,7 +83,7 @@ export default function DealCard({ deal, index, showBigBox }: DealCardProps) {
               className="text-[10px] font-semibold px-1.5 py-0.5 rounded"
               style={{
                 backgroundColor: "rgba(232, 119, 46, 0.12)",
-                color: "#F4A261",
+                color: "#E8772E",
                 border: "1px solid rgba(232, 119, 46, 0.25)",
               }}
             >
@@ -96,8 +96,8 @@ export default function DealCard({ deal, index, showBigBox }: DealCardProps) {
             <span
               className="text-[10px] font-semibold px-1.5 py-0.5 rounded"
               style={{
-                backgroundColor: "rgba(214, 59, 47, 0.12)",
-                color: "#E76F51",
+                backgroundColor: "rgba(214, 59, 47, 0.10)",
+                color: "#D63B2F",
                 border: "1px solid rgba(214, 59, 47, 0.2)",
               }}
             >
@@ -107,7 +107,7 @@ export default function DealCard({ deal, index, showBigBox }: DealCardProps) {
         </div>
 
         {/* Time ago */}
-        <span className="text-[10px]" style={{ color: "#737373" }}>
+        <span className="text-[10px]" style={{ color: "#5c5c56" }}>
           {timeAgo(deal.publishedAt)}
         </span>
       </div>
@@ -116,7 +116,7 @@ export default function DealCard({ deal, index, showBigBox }: DealCardProps) {
       <h3
         className="text-sm font-semibold leading-snug mb-2"
         style={{
-          color: "#f5f5f5",
+          color: "#f0f0eb",
           fontFamily: "var(--font-display), sans-serif",
           display: "-webkit-box",
           WebkitLineClamp: 2,
@@ -135,8 +135,8 @@ export default function DealCard({ deal, index, showBigBox }: DealCardProps) {
             <span
               className="text-xs font-medium px-2 py-0.5 rounded-md"
               style={{
-                backgroundColor: "rgba(45, 106, 79, 0.1)",
-                color: "#40916C",
+                backgroundColor: "rgba(45, 106, 79, 0.15)",
+                color: "#3A8A66",
                 border: "1px solid rgba(45, 106, 79, 0.2)",
               }}
             >
@@ -146,7 +146,7 @@ export default function DealCard({ deal, index, showBigBox }: DealCardProps) {
 
           {/* Category */}
           {deal.category && deal.category !== "retail" && (
-            <span className="text-[10px]" style={{ color: "#737373" }}>
+            <span className="text-[10px]" style={{ color: "#5c5c56" }}>
               {deal.category}
             </span>
           )}
@@ -159,7 +159,7 @@ export default function DealCard({ deal, index, showBigBox }: DealCardProps) {
               {deal.originalPrice != null && deal.originalPrice > deal.price && (
                 <span
                   className="text-xs line-through"
-                  style={{ color: "#737373" }}
+                  style={{ color: "#5c5c56" }}
                 >
                   ${deal.originalPrice.toFixed(2)}
                 </span>
@@ -184,7 +184,7 @@ export default function DealCard({ deal, index, showBigBox }: DealCardProps) {
             strokeLinecap="round"
             strokeLinejoin="round"
             className="opacity-0 group-hover:opacity-60 transition-opacity duration-200"
-            style={{ color: "#737373" }}
+            style={{ color: "#5c5c56" }}
           >
             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
             <polyline points="15 3 21 3 21 9" />

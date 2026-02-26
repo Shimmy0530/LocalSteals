@@ -15,7 +15,7 @@ export default function TopBar({ onSearchOpen }: TopBarProps) {
         backgroundColor: "rgba(10, 10, 10, 0.92)",
         backdropFilter: "blur(12px)",
         WebkitBackdropFilter: "blur(12px)",
-        borderBottom: "1px solid #1f1f1f",
+        borderBottom: "1px solid #2a2a2a",
       }}
     >
       {/* Logo + App Name */}
@@ -32,7 +32,7 @@ export default function TopBar({ onSearchOpen }: TopBarProps) {
           className="text-lg font-bold tracking-tight"
           style={{
             fontFamily: "var(--font-display), sans-serif",
-            color: "#f5f5f5",
+            color: "#f0f0eb",
           }}
         >
           Local
@@ -47,14 +47,14 @@ export default function TopBar({ onSearchOpen }: TopBarProps) {
           onClick={onSearchOpen}
           aria-label="Search deals"
           className="p-2 rounded-lg transition-colors duration-200"
-          style={{ color: "#a3a3a3" }}
+          style={{ color: "#8a8a82" }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "#222222";
-            e.currentTarget.style.color = "#f5f5f5";
+            e.currentTarget.style.backgroundColor = "#1e1e1e";
+            e.currentTarget.style.color = "#f0f0eb";
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.backgroundColor = "transparent";
-            e.currentTarget.style.color = "#a3a3a3";
+            e.currentTarget.style.color = "#8a8a82";
           }}
         >
           <svg
@@ -77,14 +77,14 @@ export default function TopBar({ onSearchOpen }: TopBarProps) {
           href="/settings"
           aria-label="Settings"
           className="p-2 rounded-lg transition-colors duration-200"
-          style={{ color: "#a3a3a3" }}
+          style={{ color: "#8a8a82" }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "#222222";
-            e.currentTarget.style.color = "#f5f5f5";
+            e.currentTarget.style.backgroundColor = "#1e1e1e";
+            e.currentTarget.style.color = "#f0f0eb";
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.backgroundColor = "transparent";
-            e.currentTarget.style.color = "#a3a3a3";
+            e.currentTarget.style.color = "#8a8a82";
           }}
         >
           <svg

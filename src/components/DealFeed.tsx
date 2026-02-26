@@ -46,18 +46,18 @@ export default function DealFeed({ showBigBox, category }: DealFeedProps) {
           className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200"
           style={{
             backgroundColor: "#141414",
-            color: "#a3a3a3",
+            color: "#8a8a82",
             border: "1px solid #2a2a2a",
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "#1a1a1a";
+            e.currentTarget.style.backgroundColor = "#1e1e1e";
             e.currentTarget.style.borderColor = "#2D6A4F";
-            e.currentTarget.style.color = "#40916C";
+            e.currentTarget.style.color = "#3A8A66";
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.backgroundColor = "#141414";
             e.currentTarget.style.borderColor = "#2a2a2a";
-            e.currentTarget.style.color = "#a3a3a3";
+            e.currentTarget.style.color = "#8a8a82";
           }}
         >
           <svg
@@ -108,17 +108,17 @@ export default function DealFeed({ showBigBox, category }: DealFeedProps) {
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            style={{ color: "#333" }}
+            style={{ color: "#2a2a2a" }}
           >
             <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
           </svg>
           <p
             className="mt-4 text-sm font-medium"
-            style={{ color: "#737373" }}
+            style={{ color: "#5c5c56" }}
           >
             No deals found
           </p>
-          <p className="text-xs mt-1" style={{ color: "#555" }}>
+          <p className="text-xs mt-1" style={{ color: "#5c5c56" }}>
             Try adjusting your filters or check back later
           </p>
         </div>
@@ -130,7 +130,7 @@ export default function DealFeed({ showBigBox, category }: DealFeedProps) {
           <div
             className="w-5 h-5 border-2 rounded-full animate-spin"
             style={{
-              borderColor: "#333",
+              borderColor: "#2a2a2a",
               borderTopColor: "#2D6A4F",
             }}
           />
@@ -144,7 +144,7 @@ export default function DealFeed({ showBigBox, category }: DealFeedProps) {
       {!isLoading && !hasMore && deals.length > 0 && (
         <p
           className="text-center text-xs py-6"
-          style={{ color: "#555" }}
+          style={{ color: "#5c5c56" }}
         >
           You&apos;ve reached the end
         </p>

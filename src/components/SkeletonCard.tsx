@@ -5,8 +5,8 @@ export default function SkeletonCard() {
     <div
       className="rounded-xl p-4"
       style={{
-        backgroundColor: "#1a1a1a",
-        border: "1px solid #222",
+        backgroundColor: "#141414",
+        border: "1px solid #2a2a2a",
       }}
     >
       {/* Source + time row */}

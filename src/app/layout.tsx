@@ -47,7 +47,7 @@ export default function RootLayout({
         className="antialiased"
         style={{
           backgroundColor: "#0a0a0a",
-          color: "#f5f5f5",
+          color: "#f0f0eb",
           fontFamily: "var(--font-body), sans-serif",
           minHeight: "100dvh",
         }}

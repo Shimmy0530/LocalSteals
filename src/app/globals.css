@@ -1,26 +1,26 @@
 @import "tailwindcss";
 
-/* ── Color Palette CSS Variables ───────────────────────────────────── */
+/* ── Color Palette CSS Variables — v2 ─────────────────────────────── */
 :root {
-  --green: #2D6A4F;
-  --green-light: #40916C;
-  --green-dark: #1B4332;
+  --forest: #2D6A4F;
+  --forest-light: #3A8A66;
+  --forest-muted: rgba(45,106,79,0.15);
 
   --orange: #E8772E;
-  --orange-light: #F4A261;
-  --orange-dark: #D45D10;
+  --orange-muted: rgba(232,119,46,0.12);
 
   --red: #D63B2F;
-  --red-light: #E76F51;
+  --red-muted: rgba(214,59,47,0.10);
 
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #141414;
-  --bg-card: #1a1a1a;
-  --bg-hover: #222222;
+  --dark: #0a0a0a;
+  --surface: #141414;
+  --surface-raised: #1e1e1e;
+  --border: #2a2a2a;
+  --disabled: #3a3a3a;
 
-  --text-primary: #f5f5f5;
-  --text-secondary: #a3a3a3;
-  --text-muted: #737373;
+  --text-primary: #f0f0eb;
+  --text-secondary: #8a8a82;
+  --text-muted: #5c5c56;
 }
 
 /* ── Scrollbar ─────────────────────────────────────────────────────── */
@@ -28,19 +28,19 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-primary);
+  background: var(--dark);
 }
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: var(--border);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: var(--disabled);
 }
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #333 var(--bg-primary);
+  scrollbar-color: var(--border) var(--dark);
 }
 
 /* ── Skeleton shimmer ──────────────────────────────────────────────── */
@@ -56,9 +56,9 @@
 .skeleton-shimmer {
   background: linear-gradient(
     90deg,
-    var(--bg-secondary) 0%,
-    var(--bg-hover) 40%,
-    var(--bg-secondary) 80%
+    var(--surface) 0%,
+    var(--surface-raised) 40%,
+    var(--surface) 80%
   );
   background-size: 800px 100%;
   animation: shimmer 1.6s ease-in-out infinite;
@@ -116,18 +116,18 @@
 .toggle-track {
   width: 44px;
   height: 24px;
-  background: var(--bg-hover);
+  background: var(--surface-raised);
   border-radius: 12px;
   position: relative;
   cursor: pointer;
   transition: background 0.25s ease;
-  border: 1px solid #333;
+  border: 1px solid var(--border);
   flex-shrink: 0;
 }
 
 .toggle-track[data-on="true"] {
-  background: var(--green);
-  border-color: var(--green-dark);
+  background: var(--forest);
+  border-color: var(--forest-light);
 }
 
 .toggle-thumb {

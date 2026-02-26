@@ -70,26 +70,26 @@ export default function SettingsPage() {
   };
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#0a0a0a", color: "#f5f5f5" }}>
+    <div className="min-h-screen" style={{ backgroundColor: "#0a0a0a", color: "#f0f0eb" }}>
       {/* Header */}
       <header
         className="sticky top-0 z-50 flex items-center gap-3 px-4 h-14"
         style={{
           backgroundColor: "rgba(10, 10, 10, 0.92)",
           backdropFilter: "blur(12px)",
-          borderBottom: "1px solid #1f1f1f",
+          borderBottom: "1px solid #2a2a2a",
         }}
       >
         <Link
           href="/"
           className="p-1.5 rounded-lg transition-colors duration-200 no-underline"
-          style={{ color: "#a3a3a3" }}
+          style={{ color: "#8a8a82" }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.color = "#f5f5f5";
-            e.currentTarget.style.backgroundColor = "#222";
+            e.currentTarget.style.color = "#f0f0eb";
+            e.currentTarget.style.backgroundColor = "#1e1e1e";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.color = "#a3a3a3";
+            e.currentTarget.style.color = "#8a8a82";
             e.currentTarget.style.backgroundColor = "transparent";
           }}
         >
@@ -119,11 +119,11 @@ export default function SettingsPage() {
         <section>
           <h2
             className="text-sm font-semibold uppercase tracking-wider mb-3"
-            style={{ color: "#2D6A4F", fontFamily: "var(--font-display), sans-serif" }}
+            style={{ color: "#3A8A66", fontFamily: "var(--font-display), sans-serif" }}
           >
             Keyword Alerts
           </h2>
-          <p className="text-xs mb-4" style={{ color: "#737373" }}>
+          <p className="text-xs mb-4" style={{ color: "#5c5c56" }}>
             Get notified when deals match your keywords.
           </p>
 
@@ -139,8 +139,8 @@ export default function SettingsPage() {
               placeholder="e.g. oil change, tires"
               className="flex-1 px-3 py-2 rounded-lg text-sm outline-none transition-colors duration-200"
               style={{
-                backgroundColor: "#1a1a1a",
-                color: "#f5f5f5",
+                backgroundColor: "#1e1e1e",
+                color: "#f0f0eb",
                 border: "1px solid #2a2a2a",
                 fontFamily: "var(--font-body), sans-serif",
               }}
@@ -156,10 +156,10 @@ export default function SettingsPage() {
               className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
               style={{
                 backgroundColor: "#2D6A4F",
-                color: "#f5f5f5",
+                color: "#ffffff",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "#40916C";
+                e.currentTarget.style.backgroundColor = "#3A8A66";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = "#2D6A4F";
@@ -180,7 +180,7 @@ export default function SettingsPage() {
               ))}
             </div>
           ) : keywords.length === 0 ? (
-            <p className="text-xs" style={{ color: "#555" }}>
+            <p className="text-xs" style={{ color: "#5c5c56" }}>
               No keywords yet. Add one above.
             </p>
           ) : (
@@ -190,8 +190,8 @@ export default function SettingsPage() {
                   key={kw.id}
                   className="flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium"
                   style={{
-                    backgroundColor: "#1a1a1a",
-                    color: "#a3a3a3",
+                    backgroundColor: "#141414",
+                    color: "#8a8a82",
                     border: "1px solid #2a2a2a",
                   }}
                 >
@@ -200,13 +200,13 @@ export default function SettingsPage() {
                     onClick={() => deleteKeyword(kw.id)}
                     aria-label={`Remove keyword ${kw.keyword}`}
                     className="ml-0.5 p-0.5 rounded-full transition-colors duration-150"
-                    style={{ color: "#737373" }}
+                    style={{ color: "#5c5c56" }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.color = "#D63B2F";
                       e.currentTarget.style.backgroundColor = "rgba(214,59,47,0.1)";
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.color = "#737373";
+                      e.currentTarget.style.color = "#5c5c56";
                       e.currentTarget.style.backgroundColor = "transparent";
                     }}
                   >
@@ -234,11 +234,11 @@ export default function SettingsPage() {
         <section>
           <h2
             className="text-sm font-semibold uppercase tracking-wider mb-3"
-            style={{ color: "#2D6A4F", fontFamily: "var(--font-display), sans-serif" }}
+            style={{ color: "#3A8A66", fontFamily: "var(--font-display), sans-serif" }}
           >
             Manual Fetch
           </h2>
-          <p className="text-xs mb-4" style={{ color: "#737373" }}>
+          <p className="text-xs mb-4" style={{ color: "#5c5c56" }}>
             Trigger a deal fetch immediately instead of waiting for the schedule.
           </p>
           <button
@@ -246,23 +246,23 @@ export default function SettingsPage() {
             disabled={isFetching}
             className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200"
             style={{
-              backgroundColor: isFetching ? "#1a1a1a" : "#E8772E",
-              color: isFetching ? "#737373" : "#0a0a0a",
+              backgroundColor: isFetching ? "#3a3a3a" : "#E8772E",
+              color: isFetching ? "#5c5c56" : "#0a0a0a",
               cursor: isFetching ? "not-allowed" : "pointer",
             }}
             onMouseEnter={(e) => {
-              if (!isFetching) e.currentTarget.style.backgroundColor = "#D45D10";
+              if (!isFetching) e.currentTarget.style.filter = "brightness(0.9)";
             }}
             onMouseLeave={(e) => {
-              if (!isFetching) e.currentTarget.style.backgroundColor = "#E8772E";
+              if (!isFetching) e.currentTarget.style.filter = "none";
             }}
           >
             {isFetching && (
               <div
                 className="w-3.5 h-3.5 border-2 rounded-full animate-spin"
                 style={{
-                  borderColor: "#555",
-                  borderTopColor: "#a3a3a3",
+                  borderColor: "#5c5c56",
+                  borderTopColor: "#8a8a82",
                 }}
               />
             )}
@@ -272,7 +272,7 @@ export default function SettingsPage() {
           {fetchStatus && (
             <p
               className="mt-3 text-xs font-medium fade-in"
-              style={{ color: "#40916C" }}
+              style={{ color: "#3A8A66" }}
             >
               {fetchStatus}
             </p>
@@ -283,11 +283,11 @@ export default function SettingsPage() {
         <section>
           <h2
             className="text-sm font-semibold uppercase tracking-wider mb-3"
-            style={{ color: "#2D6A4F", fontFamily: "var(--font-display), sans-serif" }}
+            style={{ color: "#3A8A66", fontFamily: "var(--font-display), sans-serif" }}
           >
             Notifications
           </h2>
-          <p className="text-xs mb-4" style={{ color: "#737373" }}>
+          <p className="text-xs mb-4" style={{ color: "#5c5c56" }}>
             Receive push alerts when new deals match your keywords.
           </p>
           <NotificationSetup />

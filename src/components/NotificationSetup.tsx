@@ -137,9 +137,9 @@ export default function NotificationSetup() {
     return (
       <div
         className="rounded-lg px-3 py-2.5 text-xs"
-        style={{ backgroundColor: "#1a1a1a", border: "1px solid #2a2a2a" }}
+        style={{ backgroundColor: "#141414", border: "1px solid #2a2a2a" }}
       >
-        <p style={{ color: "#a3a3a3" }}>
+        <p style={{ color: "#8a8a82" }}>
           Push notifications are not configured yet. Set your Firebase environment
           variables (<code style={{ color: "#E8772E" }}>NEXT_PUBLIC_FIREBASE_*</code>{" "}
           and <code style={{ color: "#E8772E" }}>NEXT_PUBLIC_FIREBASE_VAPID_KEY</code>)
@@ -155,9 +155,9 @@ export default function NotificationSetup() {
       <div className="flex items-center gap-2">
         <div
           className="w-2 h-2 rounded-full"
-          style={{ backgroundColor: "#737373" }}
+          style={{ backgroundColor: "#5c5c56" }}
         />
-        <span className="text-xs" style={{ color: "#737373" }}>
+        <span className="text-xs" style={{ color: "#5c5c56" }}>
           Push notifications are not supported in this browser.
         </span>
       </div>
@@ -173,12 +173,12 @@ export default function NotificationSetup() {
             className="w-2 h-2 rounded-full pulse-dot"
             style={{ backgroundColor: "#2D6A4F" }}
           />
-          <span className="text-xs font-medium" style={{ color: "#2D6A4F" }}>
+          <span className="text-xs font-medium" style={{ color: "#3A8A66" }}>
             Notifications enabled
           </span>
         </div>
         {feedback?.type === "success" && (
-          <p className="mt-2 text-[10px] fade-in" style={{ color: "#40916C" }}>
+          <p className="mt-2 text-[10px] fade-in" style={{ color: "#3A8A66" }}>
             {feedback.message}
           </p>
         )}
@@ -214,9 +214,9 @@ export default function NotificationSetup() {
         <div className="flex items-center gap-2">
           <div
             className="w-2 h-2 rounded-full"
-            style={{ backgroundColor: "#737373" }}
+            style={{ backgroundColor: "#5c5c56" }}
           />
-          <span className="text-xs" style={{ color: "#a3a3a3" }}>
+          <span className="text-xs" style={{ color: "#8a8a82" }}>
             Not enabled
           </span>
         </div>
@@ -226,21 +226,21 @@ export default function NotificationSetup() {
           disabled={isRegistering}
           className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200"
           style={{
-            backgroundColor: isRegistering ? "#1a1a1a" : "#E8772E",
-            color: isRegistering ? "#737373" : "#0a0a0a",
+            backgroundColor: isRegistering ? "#3a3a3a" : "#E8772E",
+            color: isRegistering ? "#5c5c56" : "#0a0a0a",
             cursor: isRegistering ? "not-allowed" : "pointer",
           }}
           onMouseEnter={(e) => {
-            if (!isRegistering) e.currentTarget.style.backgroundColor = "#D45D10";
+            if (!isRegistering) e.currentTarget.style.filter = "brightness(0.9)";
           }}
           onMouseLeave={(e) => {
-            if (!isRegistering) e.currentTarget.style.backgroundColor = "#E8772E";
+            if (!isRegistering) e.currentTarget.style.filter = "none";
           }}
         >
           {isRegistering && (
             <div
               className="w-3 h-3 border-2 rounded-full animate-spin"
-              style={{ borderColor: "#555", borderTopColor: "#a3a3a3" }}
+              style={{ borderColor: "#5c5c56", borderTopColor: "#8a8a82" }}
             />
           )}
           {isRegistering ? "Enabling..." : "Enable Notifications"}
