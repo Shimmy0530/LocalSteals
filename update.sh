@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 set -e
 
-echo "Pulling latest changes..."
-git pull
+read -p "Branch to pull [$(git branch --show-current)]: " BRANCH
+BRANCH="${BRANCH:-$(git branch --show-current)}"
+
+echo "Pulling latest changes from $BRANCH..."
+git pull origin "$BRANCH"
 
 echo "Installing dependencies..."
 npm install
