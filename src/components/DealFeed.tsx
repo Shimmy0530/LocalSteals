@@ -6,12 +6,14 @@ import DealCard from "./DealCard";
 import SkeletonCard from "./SkeletonCard";
 
 interface DealFeedProps {
+  demoMode: boolean;
   showBigBox: boolean;
   category: string;
 }
 
-export default function DealFeed({ showBigBox, category }: DealFeedProps) {
+export default function DealFeed({ demoMode, showBigBox, category }: DealFeedProps) {
   const { deals, isLoading, isLoadingMore, hasMore, loadMore, refresh } = useDeals({
+    demoMode,
     showBigBox,
     category,
   });

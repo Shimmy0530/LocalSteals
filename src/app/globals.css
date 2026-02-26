@@ -130,6 +130,11 @@
   border-color: var(--forest-light);
 }
 
+.toggle-track[data-variant="demo"][data-on="true"] {
+  background: #8B7424;
+  border-color: #D4A017;
+}
+
 .toggle-thumb {
   width: 18px;
   height: 18px;

@@ -5,6 +5,7 @@ import type { Deal } from "@/lib/types";
 
 interface UseSearchOptions {
   query: string;
+  demoMode: boolean;
   showBigBox: boolean;
 }
 
@@ -13,7 +14,7 @@ interface UseSearchReturn {
   isSearching: boolean;
 }
 
-export function useSearch({ query, showBigBox }: UseSearchOptions): UseSearchReturn {
+export function useSearch({ query, demoMode, showBigBox }: UseSearchOptions): UseSearchReturn {
   const [results, setResults] = useState<Deal[]>([]);
   const [isSearching, setIsSearching] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
@@ -36,6 +37,7 @@ export function useSearch({ query, showBigBox }: UseSearchOptions): UseSearchRet
 
       const params = new URLSearchParams({
         q: trimmed,
+        demo: String(demoMode),
         bigBox: String(showBigBox),
       });
 
@@ -60,7 +62,7 @@ export function useSearch({ query, showBigBox }: UseSearchOptions): UseSearchRet
       clearTimeout(timer);
       abortRef.current?.abort();
     };
-  }, [query, showBigBox]);
+  }, [query, demoMode, showBigBox]);
 
   return { results, isSearching };
 }

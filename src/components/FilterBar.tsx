@@ -7,6 +7,8 @@ const CATEGORIES = [
 ] as const;
 
 interface FilterBarProps {
+  demoMode: boolean;
+  onToggleDemo: () => void;
   showBigBox: boolean;
   onToggleBigBox: () => void;
   category: string;
@@ -14,6 +16,8 @@ interface FilterBarProps {
 }
 
 export default function FilterBar({
+  demoMode,
+  onToggleDemo,
   showBigBox,
   onToggleBigBox,
   category,
@@ -30,6 +34,26 @@ export default function FilterBar({
         borderBottom: "1px solid #2a2a2a",
       }}
     >
+      {/* Demo toggle */}
+      <button
+        onClick={onToggleDemo}
+        className="flex items-center gap-2 shrink-0"
+        aria-label={demoMode ? "Disable demo mode" : "Enable demo mode"}
+      >
+        <div className="toggle-track" data-on={String(demoMode)} data-variant="demo">
+          <div className="toggle-thumb" />
+        </div>
+        <span
+          className="text-xs font-medium whitespace-nowrap"
+          style={{ color: demoMode ? "#D4A017" : "#5c5c56" }}
+        >
+          Demo
+        </span>
+      </button>
+
+      {/* Divider */}
+      <div className="w-px h-5 shrink-0" style={{ backgroundColor: "#2a2a2a" }} />
+
       {/* Big Box toggle */}
       <button
         onClick={onToggleBigBox}

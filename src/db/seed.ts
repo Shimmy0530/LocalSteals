@@ -21,21 +21,10 @@ sqlite.pragma("journal_mode = WAL");
 const db = drizzle(sqlite);
 
 const defaultFeeds = [
+  // --- Proven working ---
   {
     name: "Slickdeals",
     url: "https://slickdeals.net/newsearch.php?mode=frontpage&searcharea=deals&searchtemps=1&rss=1",
-    type: "rss",
-    active: true,
-  },
-  {
-    name: "DealNews",
-    url: "http://content.dealnews.com/dealnews/rss/last-twenty.xml",
-    type: "rss",
-    active: true,
-  },
-  {
-    name: "Brad's Deals",
-    url: "https://feeds.feedburner.com/BradsDe",
     type: "rss",
     active: true,
   },
@@ -45,29 +34,81 @@ const defaultFeeds = [
     type: "rss",
     active: true,
   },
+
+  // --- New reliable sources ---
+  {
+    name: "Hip2Save",
+    url: "https://hip2save.com/feed/",
+    type: "rss",
+    active: true,
+  },
+  {
+    name: "Ben's Bargains",
+    url: "https://bensbargains.com/feed/",
+    type: "rss",
+    active: true,
+  },
+  {
+    name: "The Krazy Coupon Lady",
+    url: "https://thekrazycouponlady.com/feed",
+    type: "rss",
+    active: true,
+  },
+  {
+    name: "Woot",
+    url: "https://www.woot.com/feed.rss",
+    type: "rss",
+    active: true,
+  },
+  {
+    name: "Freebies2Deals",
+    url: "https://freebies2deals.com/feed/",
+    type: "rss",
+    active: true,
+  },
+  {
+    name: "A Thrifty Mom",
+    url: "https://athriftymom.com/feed/",
+    type: "rss",
+    active: true,
+  },
+
+  // --- Possibly broken (kept inactive until verified) ---
+  {
+    name: "DealNews",
+    url: "https://www.dealnews.com/rss/all.xml",
+    type: "rss",
+    active: true,
+  },
+  {
+    name: "Brad's Deals",
+    url: "https://www.bradsdeals.com/feed",
+    type: "rss",
+    active: true,
+  },
   {
     name: "CouponSurfer",
     url: "https://couponsurfer.com/rss_feed.cfm",
     type: "rss",
-    active: true,
+    active: false, // verify feed URL before enabling
   },
   {
     name: "Chicago Sun-Times Business",
     url: "https://chicago.suntimes.com/rss/business",
     type: "rss",
-    active: true,
+    active: false, // news articles, not deals - re-enable if classifier improves
   },
   {
     name: "Crain's Chicago Business",
     url: "https://www.chicagobusiness.com/rss",
     type: "rss",
-    active: true,
+    active: false,
   },
   {
     name: "Daily Herald Business",
     url: "https://www.dailyherald.com/business/rss",
     type: "rss",
-    active: true,
+    active: false,
   },
 ];
 

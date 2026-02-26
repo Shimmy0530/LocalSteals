@@ -6,15 +6,16 @@ import DealCard from "./DealCard";
 import SkeletonCard from "./SkeletonCard";
 
 interface SearchOverlayProps {
+  demoMode: boolean;
   showBigBox: boolean;
   onClose: () => void;
 }
 
-export default function SearchOverlay({ showBigBox, onClose }: SearchOverlayProps) {
+export default function SearchOverlay({ demoMode, showBigBox, onClose }: SearchOverlayProps) {
   const [query, setQuery] = useState("");
   const [closing, setClosing] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
-  const { results, isSearching } = useSearch({ query, showBigBox });
+  const { results, isSearching } = useSearch({ query, demoMode, showBigBox });
 
   // Autofocus the input
   useEffect(() => {

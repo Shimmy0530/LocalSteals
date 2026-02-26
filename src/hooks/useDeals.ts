@@ -6,6 +6,7 @@ import type { Deal } from "@/lib/types";
 const PAGE_SIZE = 30;
 
 interface UseDealsOptions {
+  demoMode: boolean;
   showBigBox: boolean;
   category: string;
 }
@@ -19,7 +20,7 @@ interface UseDealsReturn {
   refresh: () => void;
 }
 
-export function useDeals({ showBigBox, category }: UseDealsOptions): UseDealsReturn {
+export function useDeals({ demoMode, showBigBox, category }: UseDealsOptions): UseDealsReturn {
   const [deals, setDeals] = useState<Deal[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
@@ -30,6 +31,7 @@ export function useDeals({ showBigBox, category }: UseDealsOptions): UseDealsRet
   const fetchPage = useCallback(
     async (page: number, signal?: AbortSignal): Promise<Deal[]> => {
       const params = new URLSearchParams({
+        demo: String(demoMode),
         bigBox: String(showBigBox),
         category,
         page: String(page),
@@ -39,7 +41,7 @@ export function useDeals({ showBigBox, category }: UseDealsOptions): UseDealsRet
       if (!res.ok) throw new Error("Failed to fetch deals");
       return res.json();
     },
-    [showBigBox, category],
+    [demoMode, showBigBox, category],
   );
 
   // Initial load + reload when filters change

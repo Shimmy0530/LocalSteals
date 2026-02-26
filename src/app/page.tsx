@@ -7,6 +7,7 @@ import DealFeed from "@/components/DealFeed";
 import SearchOverlay from "@/components/SearchOverlay";
 
 export default function Home() {
+  const [demoMode, setDemoMode] = useState(true);
   const [showBigBox, setShowBigBox] = useState(false);
   const [category, setCategory] = useState("all");
   const [searchOpen, setSearchOpen] = useState(false);
@@ -22,6 +23,8 @@ export default function Home() {
       <div className="h-14" />
 
       <FilterBar
+        demoMode={demoMode}
+        onToggleDemo={() => setDemoMode((prev) => !prev)}
         showBigBox={showBigBox}
         onToggleBigBox={() => setShowBigBox((prev) => !prev)}
         category={category}
@@ -30,12 +33,13 @@ export default function Home() {
 
       {/* Feed area with slight top padding */}
       <main className="pt-3">
-        <DealFeed showBigBox={showBigBox} category={category} />
+        <DealFeed demoMode={demoMode} showBigBox={showBigBox} category={category} />
       </main>
 
       {/* Search overlay */}
       {searchOpen && (
         <SearchOverlay
+          demoMode={demoMode}
           showBigBox={showBigBox}
           onClose={() => setSearchOpen(false)}
         />
