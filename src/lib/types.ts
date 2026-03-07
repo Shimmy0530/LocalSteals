@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2025 Trash Panda Labs, LLC. All Rights Reserved.
+ * Proprietary and confidential. Unauthorized copying prohibited.
+ */
+
 /** Shape of a deal returned from the API (mirrors DB schema). */
 export interface Deal {
   id: number;
