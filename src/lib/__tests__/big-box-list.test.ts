@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2025 Trash Panda Labs, LLC. All Rights Reserved.
+ * Proprietary and confidential. Unauthorized copying prohibited.
+ */
+
 import { describe, it, expect } from "vitest";
 import { isBigBox } from "@/lib/big-box-list";
 

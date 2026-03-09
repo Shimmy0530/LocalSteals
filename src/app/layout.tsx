@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2025 Trash Panda Labs, LLC. All Rights Reserved.
+ * Proprietary and confidential. Unauthorized copying prohibited.
+ */
+
 import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, DM_Sans } from "next/font/google";
 import "./globals.css";

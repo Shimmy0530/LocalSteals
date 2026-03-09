@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2025 Trash Panda Labs, LLC. All Rights Reserved.
+ * Proprietary and confidential. Unauthorized copying prohibited.
+ */
+
 import { defineConfig, globalIgnores } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";

@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2025 Trash Panda Labs, LLC. All Rights Reserved.
+ * Proprietary and confidential. Unauthorized copying prohibited.
+ */
+
 "use client";
 
 import { useState, useEffect, useRef } from "react";

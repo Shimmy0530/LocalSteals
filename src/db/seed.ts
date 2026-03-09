@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2025 Trash Panda Labs, LLC. All Rights Reserved.
+ * Proprietary and confidential. Unauthorized copying prohibited.
+ */
+
 /**
  * Seed script for default RSS feed sources.
  * Run with: npx tsx src/db/seed.ts

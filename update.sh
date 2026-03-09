@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Copyright (c) 2025 Trash Panda Labs, LLC. All Rights Reserved.
+# Proprietary and confidential. Unauthorized copying prohibited.
+
 set -e
 
 read -p "Branch to pull [$(git branch --show-current)]: " BRANCH

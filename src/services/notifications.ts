@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2025 Trash Panda Labs, LLC. All Rights Reserved.
+ * Proprietary and confidential. Unauthorized copying prohibited.
+ */
+
 import admin from "@/lib/firebase-admin";
 import { db } from "@/db";
 import { fcmTokens } from "@/db/schema";
